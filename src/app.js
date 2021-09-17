@@ -1,14 +1,16 @@
 import React from "react";
+import Data from "./data";
+import "./style.css";
 
 function App() {
-  const sayHello = () => {
-    console.log("hallo");
-  };
+  
+  const [isRed, setRed] = useState(false);
+  const [count, setCount] = useState(0);
 
   return (
-    <div>
-      <h1>Hello React</h1>
-      <button onClick={sayHello}>Hello</button>
+    <div className="app">
+      <button>Hochzählen</button>
+      <Data />
     </div>
   );
 };
