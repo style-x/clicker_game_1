@@ -7,6 +7,7 @@ function Clicker(props) {
         <p>
           This is Room {props.RaumNummer}
         </p>
+        <h5>Klicks: {props.Klicks}</h5>
         <Button />
     </div>
   );
