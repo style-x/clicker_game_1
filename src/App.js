@@ -1,17 +1,20 @@
 import './App.css';
-import Clicker from './Clicker';
+import Clicker from './components/Clicker';
 
 function App() {
+
+  const Rooms = [
+    { name: "Eins", Nummer: 1 },
+    { name: "Zwei", Nummer: 2 },
+    { name: "Drei", Nummer: 3 }
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          This is the Lobby...
-        </p>
-        <Clicker RaumNummer="1"/>
-        <Clicker RaumNummer="2"/>
-        <Clicker RaumNummer="3"/>
-        </header>
+      <p> This is the Lobby... </p>
+      {Rooms.map((rum) => (
+        <Clicker name={rum.name} RaumNummer={rum.Nummer} />
+      ))}  
     </div>
   );
 }
