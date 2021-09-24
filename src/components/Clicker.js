@@ -13,8 +13,11 @@ function Clicker(props) {
         <h5>
           Room {props.RaumNummer}
         </h5>
+        <button disabled="true">BUY</button>
         <p>Klicks: {counter}</p>
         <button onClick={hoch}>Klick</button>
+        <button disabled="true">LVL</button>
+        <button disabled="true">Auto</button>
     </div>
   );
 }
