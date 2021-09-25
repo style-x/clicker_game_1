@@ -10,10 +10,9 @@ function Clicker(props) {
 
   return (
     <div className="Clicker">
-        <h5>
-          Room {props.RaumNummer}
-        </h5>
-        <button disabled="true">BUY</button>
+        <h4>
+          Room {props.RoomCount}
+        </h4>
         <p>Klicks: {counter}</p>
         <button onClick={hoch}>Klick</button>
         <button disabled="true">LVL</button>
