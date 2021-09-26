@@ -3,21 +3,22 @@ import Clicker from './components/Clicker';
 
 function App() {
 
-  let RoomCount = 1;
+  //let RoomCount = 1;
 
-  /* const RoomCount = [
-    { name: "Eins", Nummer: 1 },
-    { name: "Zwei", Nummer: 2 },
-    { name: "Drei", Nummer: 3 }
-  ]; */
+  const RoomCount = [
+    { name: "Eins", nr: 1 },
+    { name: "Zwei", nr: 2 },
+    { name: "Drei", nr: 3 },
+    { name: "Vier", nr: 4 },
+    { name: "Fünf", nr: 5 }
+  ]; 
 
   return (
     <div className="App">
       <p> This is the Lobby... </p>
-      {RoomCount.map((sum) => (
-        <Clicker RoomCount={sum[i]} />
+      {RoomCount.map((room) => (
+        <Clicker RoomName={room.name} RoomNr={room.nr} />
       ))}  
-      <button onClick={ RoomCount += 1}>BUY</button>
     </div>
   );
 }

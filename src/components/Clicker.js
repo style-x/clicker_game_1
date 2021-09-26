@@ -11,7 +11,7 @@ function Clicker(props) {
   return (
     <div className="Clicker">
         <h4>
-          Room {props.RoomCount}
+          Room {props.RoomName}
         </h4>
         <p>Klicks: {counter}</p>
         <button onClick={hoch}>Klick</button>
@@ -20,5 +20,7 @@ function Clicker(props) {
     </div>
   );
 }
+
+
 
 export default Clicker;
