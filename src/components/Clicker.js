@@ -5,6 +5,12 @@ function Clicker(props) {
   const [counter, setCounter] = useState(0);
   const hoch = () => {
     setCounter(counter + level);
+    if (counter >= level * 9) {
+      const button = document.getElementById('btn-lvl');
+      button.removeAttribute('disabled');
+    } else { 
+      console.log("fehler HIER");
+    };
   };
 
   const [level, levelup] = useState(1);
@@ -19,15 +25,14 @@ function Clicker(props) {
         </h4>
         <p>Klicks: {counter} - Level: {level}</p>
         <button onClick={hoch}>Klick</button>
-        <button onClick={EnoughCoins} class="btn-lvl">LVL</button>
-        <button class="btn-auto" disabled="true">Auto</button>
+        <button onClick={EnoughCoins} id="btn-lvl">LVL</button>
+        <button id="btn-auto" disabled>Auto</button>
     </div>
   );
 
   function EnoughCoins () {
+    console.log("LVL wurde geklickt.");
     if (counter >= level * 10) {
-      //const button = document.querySelector('btn-lvl');
-      //button.disabled = false;
       lvlup();
       let count = level * 10;
       setCounter(counter - count);
