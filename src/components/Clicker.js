@@ -6,7 +6,7 @@ function Clicker(props) {
   const hoch = () => {
     setCounter(counter + level);
     /*if (counter >= level * 9) {
-      const button = document.getElementById('btn-lvl');
+      const btn = document.getElementsByClassName('btn-lvl');
       button.classList.add('disabled');
     } else { 
       console.log("fehler HIER");
@@ -31,10 +31,10 @@ function Clicker(props) {
   };
 
   if (counter >= level * 9) {
-    const button = document.getElementById('btn-lvl');
+    const btn = document.getElementsByClassName('btn-lvl');
     button.classList.add('disabled');
   } else { 
-    const button = document.getElementById('btn-lvl');
+    const btn = document.getElementsByClassName('btn-lvl');
     button.classList.remove('disabled');
   };
 
