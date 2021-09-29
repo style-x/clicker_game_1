@@ -5,30 +5,18 @@ function Clicker(props) {
   const [counter, setCounter] = useState(0);
   const hoch = () => {
     setCounter(counter + level);
-    if (counter >= level * 9) {
+    /*if (counter >= level * 9) {
       const button = document.getElementById('btn-lvl');
-      button.removeAttribute('disabled');
+      button.classList.add('disabled');
     } else { 
       console.log("fehler HIER");
-    };
+    }; */
   };
 
   const [level, levelup] = useState(1);
   const lvlup = () => {
     levelup(level + 1);
   };
-
-  return (
-    <div className="Clicker">
-        <h4>
-          Room {props.RoomName}
-        </h4>
-        <p>Klicks: {counter} - Level: {level}</p>
-        <button onClick={hoch}>Klick</button>
-        <button onClick={EnoughCoins} id="btn-lvl">LVL</button>
-        <button id="btn-auto" disabled>Auto</button>
-    </div>
-  );
 
   function EnoughCoins () {
     console.log("LVL wurde geklickt.");
@@ -39,11 +27,29 @@ function Clicker(props) {
       console.log("LVL UP", count);
     } else {
       console.log("Nicht genug Coins ?!");
-    }
-  }
+    };
+  };
 
+  if (counter >= level * 9) {
+    const button = document.getElementById('btn-lvl');
+    button.classList.add('disabled');
+  } else { 
+    const button = document.getElementById('btn-lvl');
+    button.classList.remove('disabled');
+  };
 
-}
+  return (
+    <div className="Clicker">
+        <h4>
+          Room {props.RoomName}
+        </h4>
+        <p>Klicks: {counter} - Level: {level}</p>
+        <button onClick={hoch} class="btn">Klick</button>
+        <button onClick={EnoughCoins} class="btn btn-lvl">LVL</button>
+        <button class="btn btn-auto" disabled>Auto</button>
+    </div>
+  );
+};
 
 
 
