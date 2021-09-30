@@ -5,12 +5,6 @@ function Clicker(props) {
   const [counter, setCounter] = useState(0);
   const hoch = () => {
     setCounter(counter + level);
-    /*if (counter >= level * 9) {
-      const btn = document.getElementsByClassName('btn-lvl');
-      button.classList.add('disabled');
-    } else { 
-      console.log("fehler HIER");
-    }; */
   };
 
   const [level, levelup] = useState(1);
@@ -32,10 +26,10 @@ function Clicker(props) {
 
   if (counter >= level * 9) {
     const btn = document.getElementsByClassName('btn-lvl');
-    button.classList.add('disabled');
+    //btn.classList.add('disabled');
   } else { 
     const btn = document.getElementsByClassName('btn-lvl');
-    button.classList.remove('disabled');
+    //btn.classList.remove('disabled');
   };
 
   return (
@@ -50,7 +44,5 @@ function Clicker(props) {
     </div>
   );
 };
-
-
 
 export default Clicker;
