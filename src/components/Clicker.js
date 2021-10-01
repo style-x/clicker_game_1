@@ -26,10 +26,11 @@ function Clicker(props) {
 
   if (counter >= level * 9) {
     const btn = document.getElementsByClassName('btn-lvl');
-    //btn.classList.add('disabled');
+    console.log(btn);
+    //btn.className.add('disabled');
   } else { 
     const btn = document.getElementsByClassName('btn-lvl');
-    //btn.classList.remove('disabled');
+    //btn.className.remove('disabled');
   };
 
   return (
@@ -40,7 +41,7 @@ function Clicker(props) {
         <p>Klicks: {counter} - Level: {level}</p>
         <button onClick={hoch} class="btn">Klick</button>
         <button onClick={EnoughCoins} class="btn btn-lvl">LVL</button>
-        <button class="btn btn-auto" disabled>Auto</button>
+        <button class="btn btn-auto">Auto</button>
     </div>
   );
 };

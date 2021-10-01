@@ -1,6 +1,9 @@
 .App {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   padding: 1rem;
+  align-items: center;
 }
 
 .App > p {
@@ -26,5 +29,4 @@
 button {
   margin: 2px;
   padding: 2px 5px;
-  color: white;
 }
