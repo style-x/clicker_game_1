@@ -24,13 +24,14 @@ function Clicker(props) {
     };
   };
 
+  //const btn = document.getElementsByClassName('btn-lvl');
+  const btn = document.querySelector('.btn-lvl');
+
   if (counter >= level * 9) {
-    const btn = document.getElementsByClassName('btn-lvl');
     console.log(btn);
-    //btn.className.add('disabled');
+    btn.className.add('disabled');
   } else { 
-    const btn = document.getElementsByClassName('btn-lvl');
-    //btn.className.remove('disabled');
+    btn.className.remove('disabled');
   };
 
   return (
