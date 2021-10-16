@@ -13,7 +13,6 @@ function Clicker(props) {
   };
 
   function EnoughCoins () {
-    console.log("LVL wurde geklickt.");
     if (counter >= level * 10) {
       lvlup();
       let count = level * 10;
@@ -28,10 +27,12 @@ function Clicker(props) {
   const btn = document.querySelector('.btn-lvl');
 
   if (counter >= level * 9) {
-    console.log(btn);
-    btn.className.add('disabled');
+    //console.log(btn.classList.contains("disabled");
+    if (btn.classList.contains("disabled")) {
+      btn.classList.remove("disabled");
   } else { 
-    btn.className.remove('disabled');
+      btn.classList.add("disabled");
+    };
   };
 
   return (
@@ -41,10 +42,10 @@ function Clicker(props) {
         </h4>
         <p>Klicks: {counter} - Level: {level}</p>
         <button onClick={hoch} class="btn">Klick</button>
-        <button onClick={EnoughCoins} class="btn btn-lvl">LVL</button>
-        <button class="btn btn-auto">Auto</button>
+        <button onClick={EnoughCoins} class="btn btn-lvl disabled">LVL</button>
+        <button class="btn btn-auto disabled">Auto</button>
     </div>
-  );
+  )
 };
 
 export default Clicker;
