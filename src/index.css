@@ -16,6 +16,12 @@ body {
   color: green;
 }
 
+/*
 .disabled {
+  color: red;
+}
+*/
+
+.btn-lvl:disabled {
   color: red;
 }

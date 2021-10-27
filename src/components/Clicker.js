@@ -30,10 +30,15 @@ function Clicker(props) {
     //console.log(btn.classList.contains("disabled");
     if (btn.classList.contains("disabled")) {
       btn.classList.remove("disabled");
-  } else { 
-      btn.classList.add("disabled");
+      console.log("nicht mehr disabled..");
     };
+  } else {
+    if (btn.classList.contains("disabled")) { 
+      console.log("nicht mehr disabled..");
+  } else {
+      btn.classList.add("disabled");
   };
+};
 
   return (
     <div className="Clicker">
