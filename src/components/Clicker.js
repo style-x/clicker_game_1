@@ -12,33 +12,28 @@ function Clicker(props) {
     levelup(level + 1);
   };
 
+  const [lvldisabled, setlvldisabled] = useState(true);
+
+  //window.onclick = proofdisabled();
+  
+  function proofdisabled() {
+    if (counter >= level * 10) { 
+      setlvldisabled(false) 
+    };
+  };
+  
   function EnoughCoins () {
+    proofdisabled();
     if (counter >= level * 10) {
       lvlup();
       let count = level * 10;
       setCounter(counter - count);
       console.log("LVL UP", count);
+      setlvldisabled(true);
     } else {
       console.log("Nicht genug Coins ?!");
     };
   };
-
-  //const btn = document.getElementsByClassName('btn-lvl');
-  const btn = document.querySelector('.btn-lvl');
-
-  if (counter >= level * 9) {
-    //console.log(btn.classList.contains("disabled");
-    if (btn.classList.contains("disabled")) {
-      btn.classList.remove("disabled");
-      console.log("nicht mehr disabled..");
-    };
-  } else {
-    if (btn.classList.contains("disabled")) { 
-      console.log("nicht mehr disabled..");
-  } else {
-      btn.classList.add("disabled");
-  };
-};
 
   return (
     <div className="Clicker">
@@ -47,10 +42,14 @@ function Clicker(props) {
         </h4>
         <p>Klicks: {counter} - Level: {level}</p>
         <button onClick={hoch} class="btn">Klick</button>
-        <button onClick={EnoughCoins} class="btn btn-lvl disabled">LVL</button>
-        <button class="btn btn-auto disabled">Auto</button>
+        { lvldisabled ? (
+          <button onClick={EnoughCoins} className="btn btn-lvl disabled">LvL</button>
+          ) : (
+          <button onClick={EnoughCoins} className="btn btn-lvl">LVL</button>
+        )} 
+        <button className="btn btn-auto disabled">Auto</button>
     </div>
   )
 };
-
+  
 export default Clicker;

@@ -19,9 +19,11 @@ body {
 /*
 .disabled {
   color: red;
+  pointer-events: none;
 }
 */
 
-.btn-lvl:disabled {
+.btn-lvl.disabled {
   color: red;
+  pointer-events: none;
 }
