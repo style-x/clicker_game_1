@@ -5,6 +5,7 @@ function Clicker(props) {
   const [counter, setCounter] = useState(0);
   const hoch = () => {
     setCounter(counter + level);
+    proofdisabled(counter);
   };
 
   const [level, levelup] = useState(1);
@@ -16,14 +17,13 @@ function Clicker(props) {
 
   //window.onclick = proofdisabled();
   
-  function proofdisabled() {
+  function proofdisabled(counter) {
     if (counter >= level * 10) { 
-      setlvldisabled(false) 
+      setlvldisabled(false);
     };
   };
   
   function EnoughCoins () {
-    proofdisabled();
     if (counter >= level * 10) {
       lvlup();
       let count = level * 10;
@@ -45,7 +45,7 @@ function Clicker(props) {
         { lvldisabled ? (
           <button onClick={EnoughCoins} className="btn btn-lvl disabled">LvL</button>
           ) : (
-          <button onClick={EnoughCoins} className="btn btn-lvl">LVL</button>
+          <button onClick={EnoughCoins} className="btn btn-lvl">LvL</button>
         )} 
         <button className="btn btn-auto disabled">Auto</button>
     </div>

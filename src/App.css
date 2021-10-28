@@ -30,3 +30,19 @@ button {
   margin: 2px;
   padding: 2px 5px;
 }
+
+.btn-lvl {
+  color: green;
+}
+
+/*
+.disabled {
+  color: red;
+  pointer-events: none;
+}
+*/
+
+.btn-lvl.disabled {
+  color: red;
+  pointer-events: none;
+}

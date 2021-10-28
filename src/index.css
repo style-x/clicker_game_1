@@ -11,19 +11,3 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-.btn-lvl {
-  color: green;
-}
-
-/*
-.disabled {
-  color: red;
-  pointer-events: none;
-}
-*/
-
-.btn-lvl.disabled {
-  color: red;
-  pointer-events: none;
-}
