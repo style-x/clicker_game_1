@@ -5,31 +5,32 @@ function Clicker(props) {
   const [counter, setCounter] = useState(0);
   const hoch = () => {
     setCounter(counter + level);
-    proofdisabled(counter);
+    proofdisabled();
   };
 
   const [level, levelup] = useState(1);
   const lvlup = () => {
     levelup(level + 1);
+    proofdisabled();
   };
 
   const [lvldisabled, setlvldisabled] = useState(true);
 
-  //window.onclick = proofdisabled();
-  
-  function proofdisabled(counter) {
-    if (counter >= level * 10) { 
+  function proofdisabled() {
+    if ((counter + level) >= (level * 10)) { 
       setlvldisabled(false);
+    } else {
+      setlvldisabled(true);
     };
   };
   
   function EnoughCoins () {
-    if (counter >= level * 10) {
+    if ((counter + level) >= (level * 10)) {
       lvlup();
       let count = level * 10;
       setCounter(counter - count);
       console.log("LVL UP", count);
-      setlvldisabled(true);
+      proofdisabled();
     } else {
       console.log("Nicht genug Coins ?!");
     };
@@ -43,7 +44,7 @@ function Clicker(props) {
         <p>Klicks: {counter} - Level: {level}</p>
         <button onClick={hoch} class="btn">Klick</button>
         { lvldisabled ? (
-          <button onClick={EnoughCoins} className="btn btn-lvl disabled">LvL</button>
+          <button onClick={EnoughCoins} className="btn btn-lvl disabled">{counter}</button>
           ) : (
           <button onClick={EnoughCoins} className="btn btn-lvl">LvL</button>
         )} 
