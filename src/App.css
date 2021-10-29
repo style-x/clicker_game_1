@@ -31,18 +31,22 @@ button {
   padding: 2px 5px;
 }
 
+.btn {
+  width: 3rem;
+}
+
 .btn-lvl {
   color: green;
 }
 
-/*
-.disabled {
-  color: red;
-  pointer-events: none;
-}
-*/
-
 .btn-lvl.disabled {
   color: red;
   pointer-events: none;
+  border: 1px solid lightgrey;
+}
+
+.btn-auto.disabled {
+  color: red;
+  pointer-events: none;
+  border: 1px solid lightgrey;
 }
