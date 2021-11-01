@@ -29,7 +29,7 @@ function Clicker(props) {
           Room {props.RoomName}
         </h4>
         <p>Klicks:<span> {counter} </span>- Level:<span> {level} </span></p>
-        <button onClick={hoch} class="btn">Klick</button>
+        <button onClick={hoch} class="btn btn-click">Klick</button>
         { (counter >= (level * 10)) ? (
           <button onClick={EnoughCoins} className="btn btn-lvl">LVL</button>
           ) : (
