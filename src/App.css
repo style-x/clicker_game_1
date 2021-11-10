@@ -11,7 +11,8 @@
 }
 
 .Clicker {
-  border: 2px solid black;
+  min-width: 18rem;
+  border: 2px solid #777;
   padding: 1rem;
   margin: 0.5rem;
   border-radius: 0.5rem;
