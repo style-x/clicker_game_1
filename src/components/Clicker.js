@@ -17,7 +17,6 @@ function Clicker(props) {
       lvlup();
       let count = level * 10;
       setCounter(counter - count);
-      console.log("LVL UP", count);
     } else {
       console.log("Nicht genug Coins ?!");
     };
@@ -26,7 +25,7 @@ function Clicker(props) {
   return (
     <div className="Clicker">
         <h4>
-          Room {props.RoomName}
+          Raum {props.RoomName}
         </h4>
         <p>Klicks:<span> {counter} </span>- Level:<span> {level} </span></p>
         <button onClick={hoch} class="btn btn-click">Klick</button>
