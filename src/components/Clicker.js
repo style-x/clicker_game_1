@@ -18,7 +18,7 @@ function Clicker(props) {
       let count = level * 10;
       setCounter(counter - count);
     } else {
-      console.log("Nicht genug Coins ?!");
+      console.log("Nicht genug Coins!");
     };
   };
   
